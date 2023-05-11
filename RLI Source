@@ -1,0 +1,41 @@
+Let's make a game!
+
+name:The Red Lake - Idle Edition
+author:Quantum
+created:11/5/2023
+version:0.0.1a
+
+Settings
+building cost increase:100%
+
+Layout
+  *resources
+    contains:Resources
+    header:These are your resources.
+  *buildings
+    contains:Buildings
+    header:These are things you can build.
+    tooltip origin:left
+  *unlockables
+    contains:Upgrades, Achievements
+    names:hide
+
+Resources
+	*Corrupt-Be-Gone|Corrupt-Be-Gones
+		name:Corrupt-Be-Gone|Corrupt-Be-Gones
+		desc:These corruption potions are what keeps you and the site alive. Make one with every click!
+		icon:icons[0,0]
+		class:noBackground
+		show earned
+
+Buildings
+	*TEMPLATE
+		on click:anim glow
+		
+	*Walker|Walkers
+		name:Walker|Walkers
+		desc:A walker spawner..<//><b>Effect:</b><.>Produces 1 walker every 10 seconds.
+		icon:icons[3,0]
+		cost:15 Corrupt-Be-Gones
+		on tick:yield 0.1 Corrupt-Be-Gone
+		unlocked
